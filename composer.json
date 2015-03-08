@@ -1,0 +1,27 @@
+{
+    "name": "react/curl",
+    "description": "multi curl driver for reactphp.",
+    "keywords": ["mysql", "php", "multi", "curl"],
+    "license": "None",
+    "require": {
+        "php": ">=5.4.0",
+
+        "react/promise": "~2.0",
+        "react/event-loop": "*",
+        "network/multiCurl": "*"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "React\\Curl\\": "src"
+        }
+    },
+    "repositories":[
+        {
+            "type":"git",
+            "url":"https://github.com/KhristenkoYura/multicurl"
+        }
+    ]
+}
