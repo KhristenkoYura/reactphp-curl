@@ -32,6 +32,7 @@ class Curl {
         $this->loop = $loop;
         $this->client = new \multiCurl\Client();
         $this->client->isSelect(false);
+        $this->client->setClassResult('\\React\Curl\\Result');
     }
 
     /**
@@ -64,7 +65,7 @@ class Curl {
      * @return Promise
      */
     public function add($opts, $params = []) {
-        $params['deferred'] = $deferred = new Deferred();
+        $params['__deferred'] = $deferred = new Deferred();
         $this->client->add($opts, $params);
         return $deferred->promise();
     }
@@ -74,11 +75,11 @@ class Curl {
         $client->run();
 
         while($client->has()) {
-            $result = $client->next();
             /**
-             * @var Deferred $deferred
+             * @var Client $result
              */
-            $deferred = $result->getParams()['deferred'];
+            $result = $client->next();
+            $deferred = $result->shiftDeferred();
 
             if (!$result->hasError()) {
                 $deferred->resolve($result);
