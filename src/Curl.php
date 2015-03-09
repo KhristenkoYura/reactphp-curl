@@ -5,14 +5,14 @@ namespace React\Curl;
 use \React\Promise\Deferred;
 use \React\Promise\Promise;
 
-class Client {
+class Curl {
 
     /**
      * @var \React\EventLoop\LoopInterface
      */
     public $loop;
 
-    public $wait_loop = false;
+    public $loop_timer;
 
 
     /**
@@ -87,13 +87,13 @@ class Client {
             }
         }
 
-        if (!$this->wait_loop) {
-            $this->wait_loop = true;
+        if (!isset($this->loop_timer)) {
             $that = $this;
-            $this->loop->addTimer($this->timeout, function() use($that){
-                $that->wait_loop = false;
-                if ($that->client->run() || $that->client->has()) {
-                    $this->loop->addTimer($this->timeout, [$that, 'run']);
+            $this->loop_timer = $this->loop->addPeriodicTimer($this->timeout, function() use($that){
+		$that->run();
+                if (!($that->client->run() || $that->client->has())) {
+                    $this->loop_timer->cancel();
+                    $this->loop_timer = null;
                 }
             });
         }
