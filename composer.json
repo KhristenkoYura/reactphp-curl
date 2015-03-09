@@ -8,7 +8,7 @@
 
         "react/promise": "~2.0",
         "react/event-loop": "*",
-        "network/multiCurl": "*"
+        "network/multi-curl": "*"
     },
     "require-dev": {
 
