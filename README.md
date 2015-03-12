@@ -8,7 +8,7 @@ The recommended way to install reactphp-curl is through [composer](http://getcom
 ```
 {
     "require": {
-        "react/curl": "*"
+        "khr/react-curl": "*"
     }
 }
 ```
