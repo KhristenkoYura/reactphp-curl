@@ -1,6 +1,6 @@
 <?php
 
-namespace React\Curl;
+namespace KHR\React\Curl;
 
 
 class Exception extends \RuntimeException {

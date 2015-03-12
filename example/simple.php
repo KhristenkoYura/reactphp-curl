@@ -1,12 +1,12 @@
 <?php
 
 use \React\EventLoop\Factory;
-use \React\Curl\Curl;
-use \React\Curl\Exception;
+use \KHR\React\Curl\Curl;
+use \KHR\React\Curl\Exception;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$cb_ok = function(multiCurl\Result $result){
+$cb_ok = function(MCurl\Result $result){
     echo $result->info['url'], PHP_EOL;
     //print_r($result->info);
 };

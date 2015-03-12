@@ -1,6 +1,6 @@
 <?php
 
-namespace React\Curl;
+namespace KHR\React\Curl;
 
 use \React\Promise\Deferred;
 use \React\Promise\Promise;
@@ -35,7 +35,7 @@ class Curl {
         $this->loop = $loop;
         $this->client = new \MCurl\Client();
         $this->client->isSelect(false);
-        $this->client->setClassResult('\\React\Curl\\Result');
+        $this->client->setClassResult('\\KHR\\React\Curl\\Result');
     }
 
     /**
