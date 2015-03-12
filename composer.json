@@ -8,7 +8,7 @@
 
         "react/promise": "~2.0",
         "react/event-loop": "*",
-        "network/multi-curl": "dev-master"
+        "khr/php-mcurl-client": "3.*"
     },
     "require-dev": {
 
@@ -17,11 +17,5 @@
         "psr-4": {
             "React\\Curl\\": "src"
         }
-    },
-    "repositories":[
-        {
-            "type":"git",
-            "url":"https://github.com/KhristenkoYura/multicurl"
-        }
-    ]
+    }
 }

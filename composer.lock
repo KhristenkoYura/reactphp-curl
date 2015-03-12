@@ -4,15 +4,21 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9a847527200ca23d3b18ea02a865067d",
+    "hash": "a98f2cb630dcefba54da2bc1f33226e1",
     "packages": [
         {
-            "name": "network/multi-curl",
-            "version": "dev-master",
+            "name": "khr/php-mcurl-client",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/KhristenkoYura/multicurl",
-                "reference": "c5379a48e39d8f4209f8e4496bab15053d6019cf"
+                "url": "https://github.com/KhristenkoYura/mcurl.git",
+                "reference": "3bd82d8dbb8beeaa6cbc8dd455f0e5710703adaf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KhristenkoYura/mcurl/zipball/3bd82d8dbb8beeaa6cbc8dd455f0e5710703adaf",
+                "reference": "3bd82d8dbb8beeaa6cbc8dd455f0e5710703adaf",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
@@ -23,9 +29,10 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "multiCurl\\": "src/"
+                    "MCurl\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -35,14 +42,15 @@
                     "email": "khristenkoyura@gmail.com"
                 }
             ],
-            "description": "Multi curl client for PHP 5.3",
-            "homepage": "http://github.com/khristenkoyura/multicurl",
+            "description": "wrap curl client for PHP 5.3; using multi curl, parallel request and write asynchronous code",
+            "homepage": "http://github.com/khristenkoyura/mcurl",
             "keywords": [
                 "client",
                 "curl",
-                "multi"
+                "multi",
+                "php"
             ],
-            "time": "2015-03-09 13:41:13"
+            "time": "2015-03-12 22:43:32"
         },
         {
             "name": "react/event-loop",
@@ -135,9 +143,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "network/multi-curl": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

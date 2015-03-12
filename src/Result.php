@@ -4,7 +4,7 @@ namespace React\Curl;
 
 use \React\Promise\Deferred;
 
-class Result extends \multiCurl\Result {
+class Result extends \MCurl\Result {
 
     /**
      * @return Deferred

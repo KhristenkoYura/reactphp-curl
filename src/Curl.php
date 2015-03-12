@@ -19,7 +19,7 @@ class Curl {
 
 
     /**
-     * @var \multiCurl\Client
+     * @var \MCurl\Client
      */
     public $client;
 
@@ -33,7 +33,7 @@ class Curl {
 
     public function __construct($loop) {
         $this->loop = $loop;
-        $this->client = new \multiCurl\Client();
+        $this->client = new \MCurl\Client();
         $this->client->isSelect(false);
         $this->client->setClassResult('\\React\Curl\\Result');
     }
