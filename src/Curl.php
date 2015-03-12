@@ -12,6 +12,9 @@ class Curl {
      */
     public $loop;
 
+    /**
+     * @var \React\EventLoop\Timer\TimerInterface
+     */
     public $loop_timer;
 
 
@@ -76,7 +79,7 @@ class Curl {
 
         while($client->has()) {
             /**
-             * @var Client $result
+             * @var Result $result
              */
             $result = $client->next();
             $deferred = $result->shiftDeferred();
@@ -89,10 +92,9 @@ class Curl {
         }
 
         if (!isset($this->loop_timer)) {
-            $that = $this;
-            $this->loop_timer = $this->loop->addPeriodicTimer($this->timeout, function() use($that){
-		$that->run();
-                if (!($that->client->run() || $that->client->has())) {
+            $this->loop_timer = $this->loop->addPeriodicTimer($this->timeout, function() {
+                $this->run();
+                if (!($this->client->run() || $this->client->has())) {
                     $this->loop_timer->cancel();
                     $this->loop_timer = null;
                 }

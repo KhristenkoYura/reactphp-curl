@@ -8,7 +8,7 @@
 
         "react/promise": "~2.0",
         "react/event-loop": "*",
-        "network/multi-curl": "*"
+        "network/multi-curl": "dev-master"
     },
     "require-dev": {
 

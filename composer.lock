@@ -4,15 +4,15 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0a4176d1df02d0a58b097c91b5f6624b",
+    "hash": "9a847527200ca23d3b18ea02a865067d",
     "packages": [
         {
-            "name": "network/multiCurl",
-            "version": "2.0.2",
+            "name": "network/multi-curl",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KhristenkoYura/multicurl",
-                "reference": "08d7c1eb00d7f175475f5f850b9ac840e76578c3"
+                "reference": "c5379a48e39d8f4209f8e4496bab15053d6019cf"
             },
             "require": {
                 "php": ">=5.3.0"
@@ -42,7 +42,7 @@
                 "curl",
                 "multi"
             ],
-            "time": "2015-03-08 17:15:04"
+            "time": "2015-03-09 13:41:13"
         },
         {
             "name": "react/event-loop",
@@ -135,7 +135,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "network/multi-curl": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
